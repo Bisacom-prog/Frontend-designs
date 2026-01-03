@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bismark Apenkwah | Frontend Designer</title>
+  <meta name="description" content="Bismark Apenkwah — Frontend Designer & Developer. Selected work: Aba’s Pie, Landing Page, Flower Bar, Gospel Quote, Bisacom Graphics." />
+  <meta name="theme-color" content="#1E3A8A" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: '#1E3A8A',
+            accent: '#F59E0B',
+            darkbg: '#0f172a'
+          },
+          fontFamily: {
+            heading: ['Playfair Display', 'serif'],
+            body: ['Inter', 'system-ui', '-apple-system', 'Segoe UI', 'Roboto', 'sans-serif']
+          },
+          boxShadow: {
+            soft: '0 10px 30px rgba(0,0,0,.18)'
+          }
+        }
+      }
+    }
+  </script>
+
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+
+<body class="bg-white text-gray-800 dark:bg-darkbg dark:text-gray-200 font-body transition-colors duration-300">
+  <a class="relative z-10" target="_blank" rel="noopener noreferrer" href="#home" class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[60] focus:bg-white focus:text-gray-900 focus:px-4 focus:py-2 focus:rounded">
+    Skip to content
+  </a>
+
+  <header class="fixed top-0 left-0 w-full z-50 border-b border-gray-200/70 dark:border-white/10 bg-white/75 dark:bg-darkbg/70 backdrop-blur">
+    <nav class="max-w-6xl mx-auto px-4 md:px-6 py-4 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <span class="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-gray-200 dark:border-white/10 bg-white/60 dark:bg-white/5 shadow-sm">
+          <span class="font-heading text-primary dark:text-accent text-lg">BA</span>
+        </span>
+        <span class="hidden sm:block font-semibold text-gray-900 dark:text-gray-100">Bismark Apenkwah</span>
+      </div>
+
+      <div class="hidden md:flex items-center gap-8 text-sm">
+        <a class="nav-link" href="#home">Home</a>
+        <a class="nav-link" href="#about">About</a>
+        <a class="nav-link" href="#projects">Projects</a>
+      </div>
+
+      <div class="flex items-center gap-2">
+        <button id="themeToggle" type="button" class="btn-ghost" aria-label="Toggle dark mode">
+          <span class="theme-icon" aria-hidden="true"></span>
+          <span class="hidden sm:inline">Theme</span>
+        </button>
+
+        <button id="mobileMenuBtn" type="button" class="md:hidden btn-ghost" aria-controls="mobileMenu" aria-expanded="false">
+          <span class="sr-only">Open menu</span>
+          <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" d="M4 7h16M4 12h16M4 17h16"/>
+          </svg>
+        </button>
+      </div>
+    </nav>
+
+    <div id="mobileMenu" class="md:hidden hidden border-t border-gray-200/70 dark:border-white/10">
+      <div class="max-w-6xl mx-auto px-4 md:px-6 py-3 flex flex-col gap-2">
+        <a class="nav-link py-2" href="#home">Home</a>
+        <a class="nav-link py-2" href="#about">About</a>
+        <a class="nav-link py-2" href="#projects">Projects</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="pt-24">
+    <section id="home" class="relative">
+      <div class="absolute inset-0 pointer-events-none pointer-events-none">
+        <div class="mx-auto max-w-6xl px-4 md:px-6">
+          <div class="mt-12 h-[1px] w-full bg-gradient-to-r from-transparent via-primary/30 to-transparent dark:via-accent/30"></div>
+        </div>
+      </div>
+
+      <div class="max-w-6xl mx-auto px-4 md:px-6 py-16 md:py-24 text-center">
+        <p class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-gray-200 dark:border-white/10 bg-white/60 dark:bg-white/5 text-xs tracking-wide text-gray-700 dark:text-gray-300">
+          Frontend • UI/UX • Brand
+        </p>
+
+        <h1 class="mt-6 font-heading text-5xl md:text-7xl leading-tight">
+          <span class="text-primary dark:text-accent">Bismark Apenkwah</span>
+        </h1>
+
+        <p class="mt-4 text-base md:text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+          Frontend Designer & Developer crafting modern, premium web experiences with clean UI, strong accessibility, and performance-first delivery.
+        </p>
+
+        <div class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3">
+          <a class="relative z-10" target="_blank" rel="noopener noreferrer" href="#projects" class="btn-primary">View Projects</a>
+          <a class="relative z-10" target="_blank" rel="noopener noreferrer" href="#about" class="btn-secondary">About Me</a>
+        </div>
+
+        <div class="mt-10 flex items-center justify-center gap-2">
+          <span class="h-[2px] w-10 bg-gradient-to-r from-transparent via-primary to-transparent dark:via-accent"></span>
+          <span class="text-xs text-gray-500 dark:text-gray-400">Selected work</span>
+          <span class="h-[2px] w-10 bg-gradient-to-r from-transparent via-primary to-transparent dark:via-accent"></span>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="py-16 md:py-20 bg-gray-50 dark:bg-gray-900/30 border-y border-gray-200/60 dark:border-white/10">
+      <div class="max-w-5xl mx-auto px-4 md:px-6">
+        <h2 class="font-heading text-3xl md:text-4xl text-primary dark:text-accent text-center">About</h2>
+        <p class="mt-5 text-gray-600 dark:text-gray-300 leading-relaxed text-center max-w-3xl mx-auto">
+          I build responsive, accessible interfaces with refined micro-interactions and consistent visual systems. I enjoy translating brand identity into clean layouts, strong typography, and reliable components.
+        </p>
+      </div>
+    </section>
+
+    <section id="projects" class="py-16 md:py-20">
+      <div class="max-w-6xl mx-auto px-4 md:px-6">
+        <div class="text-center">
+          <h2 class="font-heading text-3xl md:text-4xl text-primary dark:text-accent">Projects</h2>
+          <p class="mt-3 text-gray-600 dark:text-gray-300">A focused selection aligned with your wireframe layout.</p>
+        </div>
+
+        <div class="mt-10 projects-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-fr">
+  <!-- Aba’s Pie -->
+  <a href="https://abas-pie-website.vercel.app/" target="_blank" rel="noopener noreferrer" class="block group">
+    <article class="project-card reveal">
+      <img loading="lazy" loading="lazy" src="assets/img/Aba.webp" loading="lazy" alt="Aba’s">
+      <h3 class="mt-4 project-title">Aba’s Pie</h3>
+      <p class="project-text">Logo + brand presence for an authentic Ghanaian meat pie business.</p>
+    </article>
+  </a>
+
+  <!-- Landing Page -->
+  <a href="#" target="_blank" rel="noopener noreferrer" class="block group">
+    <article class="project-card reveal">
+      <img loading="lazy" loading="lazy" src="assets/img/Landing.webp" loading="lazy" alt="Landing">
+      <h3 class="project-title">Landing Page</h3>
+      <p class="project-text">A modern landing page focused on clarity, conversion, and speed.</p>
+    </article>
+  </a>
+
+  <!-- Flower Bar -->
+  <a href="#" target="_blank" rel="noopener noreferrer" class="block group">
+    <article class="project-card reveal">
+      <img loading="lazy" loading="lazy" src="assets/img/Flowerbar.webp" loading="lazy" alt="Flower">
+      <h3 class="project-title">Flower Bar</h3>
+      <p class="project-text">Brand identity and website direction for a floral business.</p>
+    </article>
+  </a>
+
+  <!-- Gospel Quote -->
+  <a href="https://gospelquote-next-sanity.vercel.app/" target="_blank" rel="noopener noreferrer" class="block group">
+    <article class="project-card reveal">
+      <img loading="lazy" loading="lazy" src="assets/img/Gospel.webp" loading="lazy" alt="Gospel">
+      <h3 class="project-title">GospelQuote</h3>
+      <p class="project-text">A faith-based blog & podcast platform with modern UX.</p>
+    </article>
+  </a>
+
+  <!-- Bisacom Graphics -->
+  <a href="#" target="_blank" rel="noopener noreferrer" class="block group">
+    <article class="project-card reveal">
+      <img loading="lazy" loading="lazy" src="assets/img/Bisacom.webp" loading="lazy" alt="Bisacom">
+      <h3 class="project-title">Personal Portfolio</h3>
+      <p class="project-text">My design portfolio hub—branding, UI, and frontend delivery.</p>
+      </article>
+       </a>
+      </div>
+
+    </div>
+    </section>
+  </main>
+
+  <div id="cookieBanner" class="fixed bottom-4 left-4 right-4 md:left-6 md:right-auto md:max-w-xl z-[60] hidden">
+    <div class="rounded-2xl border border-gray-200 dark:border-white/10 bg-white/95 dark:bg-gray-900/90 backdrop-blur shadow-soft p-4">
+      <div class="flex items-start gap-3">
+        <div class="mt-1 shrink-0 h-9 w-9 rounded-xl border border-gray-200 dark:border-white/10 bg-gray-50 dark:bg-white/5 flex items-center justify-center">
+          <span class="font-heading text-primary dark:text-accent">CC</span>
+        </div>
+        <div class="flex-1">
+          <p class="font-semibold text-gray-900 dark:text-gray-100">Cookies</p>
+          <p class="mt-1 text-sm text-gray-600 dark:text-gray-300">
+            We use cookies to improve site performance and understand usage. You can manage preferences at any time.
+          </p>
+
+          <div class="mt-3 flex flex-col sm:flex-row sm:items-center gap-2">
+            <button id="cookieAcceptAll" class="btn-primary w-full sm:w-auto">Accept all</button>
+            <button id="cookieRejectAll" class="btn-secondary w-full sm:w-auto">Reject</button>
+            <button id="cookieManage" class="btn-ghost w-full sm:w-auto">Manage cookies</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="cookieModal" class="fixed inset-0 z-[70] hidden" role="dialog" aria-modal="true" aria-labelledby="cookieModalTitle">
+    <div class="absolute inset-0 pointer-events-none bg-black/50"></div>
+    <div class="relative max-w-lg mx-auto mt-24 px-4">
+      <div class="rounded-2xl border border-gray-200 dark:border-white/10 bg-white dark:bg-gray-900 shadow-soft">
+        <div class="p-5 border-b border-gray-200/70 dark:border-white/10 flex items-center justify-between">
+          <h3 id="cookieModalTitle" class="font-heading text-xl text-primary dark:text-accent">Cookie preferences</h3>
+          <button id="cookieModalClose" class="btn-ghost" type="button" aria-label="Close cookie preferences">
+            <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" d="M6 6l12 12M18 6L6 18"/>
+            </svg>
+          </button>
+        </div>
+
+        <div class="p-5 space-y-4">
+          <div class="flex items-start justify-between gap-4">
+            <div>
+              <p class="font-semibold text-gray-900 dark:text-gray-100">Necessary</p>
+              <p class="text-sm text-gray-600 dark:text-gray-300">Required for core site functionality.</p>
+            </div>
+            <span class="text-xs px-2 py-1 rounded-full bg-gray-100 dark:bg-white/10 text-gray-700 dark:text-gray-200">Always on</span>
+          </div>
+
+          <label class="flex items-start justify-between gap-4 cursor-pointer">
+            <div>
+              <p class="font-semibold text-gray-900 dark:text-gray-100">Analytics</p>
+              <p class="text-sm text-gray-600 dark:text-gray-300">Helps us understand traffic and improve pages.</p>
+            </div>
+            <input id="cookieAnalytics" type="checkbox" class="h-5 w-5 accent-[#F59E0B]" />
+          </label>
+
+          <label class="flex items-start justify-between gap-4 cursor-pointer">
+            <div>
+              <p class="font-semibold text-gray-900 dark:text-gray-100">Marketing</p>
+              <p class="text-sm text-gray-600 dark:text-gray-300">Used to personalize experiences and outreach.</p>
+            </div>
+            <input id="cookieMarketing" type="checkbox" class="h-5 w-5 accent-[#F59E0B]" />
+          </label>
+
+          <div class="pt-2 flex flex-col sm:flex-row gap-2">
+            <button id="cookieSave" class="btn-primary w-full sm:w-auto">Save preferences</button>
+            <button id="cookieRejectInModal" class="btn-secondary w-full sm:w-auto">Reject all</button>
+          </div>
+
+          <p class="text-xs text-gray-500 dark:text-gray-400">
+            See <a class="relative z-10" target="_blank" rel="noopener noreferrer" href="privacy-policy.html" class="underline hover:text-primary dark:hover:text-accent">Privacy &amp; Cookie Policy</a> for details.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+<div id="site-footer"></div>
+
+<script src="assets/js/footer.js" defer></script>
+<script src="assets/js/cookie-manager.js" defer></script>
+<script src="assets/js/main.js" defer></script>
+
+</body>
+</html>

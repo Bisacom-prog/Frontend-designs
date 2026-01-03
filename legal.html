@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Legal Information | Bismark Apenkwah</title>
+  <meta name="description" content="Legal information, policies, and cookie preferences for Bismark Apenkwah's portfolio website." />
+  <meta name="theme-color" content="#1E3A8A" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500&display=swap" rel="stylesheet" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: { primary:'#1E3A8A', accent:'#F59E0B', darkbg:'#0f172a' },
+          fontFamily: { heading:['Playfair Display','serif'], body:['Inter','sans-serif'] }
+        }
+      }
+    };
+  </script>
+
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+
+<body class="bg-white dark:bg-darkbg text-gray-800 dark:text-gray-200 font-body">
+
+  <main class="max-w-3xl mx-auto px-6 py-16">
+    <a href="index.html" class="inline-block mb-6 text-sm underline text-primary dark:text-accent">← Back to home</a>
+
+    <h1 class="text-3xl font-heading font-bold mb-3">Legal Information</h1>
+    <p class="text-sm text-gray-600 dark:text-gray-400 mb-10">
+      Use this page to access the website’s legal documents and manage your cookie preferences.
+      This is a personal portfolio website and uses essential cookies by default.
+    </p>
+
+    <section class="space-y-6">
+      <div class="rounded-xl border border-gray-200 dark:border-gray-800 p-6 bg-gray-50 dark:bg-gray-900/40">
+        <h2 class="font-semibold text-gray-900 dark:text-gray-100 mb-2">Documents</h2>
+        <ul class="space-y-2 text-sm">
+          <li><a class="underline hover:no-underline" href="privacy-policy.html">Privacy &amp; Cookie Policy</a></li>
+          <li><a class="underline hover:no-underline" href="terms-of-use.html">Terms of Use</a></li>
+        </ul>
+      </div>
+
+      <div class="rounded-xl border border-gray-200 dark:border-gray-800 p-6">
+        <h2 class="font-semibold text-gray-900 dark:text-gray-100 mb-2">Cookie preferences</h2>
+        <p class="text-sm text-gray-600 dark:text-gray-400 mb-4">
+          You can review or change your cookie preferences at any time.
+          If you haven’t chosen yet, the site runs on essential cookies only.
+        </p>
+
+        <div class="flex flex-wrap gap-3">
+          <button type="button" onclick="openCookieManager()"
+            class="px-4 py-2 rounded-lg bg-primary text-white text-sm hover:opacity-95">
+            Manage Cookies
+          </button>
+          <button type="button" onclick="localStorage.removeItem('ba_cookie_consent_v1'); localStorage.removeItem('ba_cookie_consent'); alert('Cookie preferences reset. Reload the page to see the banner again.');"
+            class="px-4 py-2 rounded-lg border border-gray-200 dark:border-gray-700 text-sm hover:bg-gray-50 dark:hover:bg-gray-800">
+            Reset cookie choices
+          </button>
+        </div>
+
+        <p class="mt-4 text-xs text-gray-500 dark:text-gray-500">
+          Note: If you later add analytics (e.g., GA4), it should only load after consent for analytics cookies.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+
+
+
+<script src="assets/js/footer.js" defer></script>
+<script src="assets/js/cookie-manager.js" defer></script>
+<script src="assets/js/main.js" defer></script>
+
+</body>
+</html>
