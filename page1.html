@@ -1,0 +1,656 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Flower Bar — Fresh Flowers in Ghana</title>
+  <meta name="description" content="Flower Bar (Ghana) — Freshly cut flowers for every occasion. Browse our collection, add to cart, and checkout via WhatsApp or Mobile Money." />
+  <meta name="theme-color" content="#009661" />
+
+  <link rel="preload" as="image" href="assets/img/flower.webp" type="image/webp">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Flower Bar — Fresh Flowers in Ghana" />
+  <meta property="og:description" content="Freshly cut flowers for every occasion. Modern ordering via WhatsApp." />
+  <meta property="og:type" content="website" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Brand tokens (derived from logo) -->
+  <script src="assets/js/tailwind.config.js"></script>
+
+  <link rel="stylesheet" href="assets/css/flowerbar.css">
+</head>
+
+<body class="bg-white text-fb.ink font-sans">
+  <!-- Skip link -->
+  <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[9999] focus:bg-white focus:px-4 focus:py-2 focus:rounded-lg focus:shadow-soft">
+    Skip to content
+  </a>
+
+  <!-- ================= HEADER / NAV ================= -->
+  <header class="sticky top-0 z-50 bg-white/90 backdrop-blur border-b border-black/5">
+    <nav class="max-w-6xl mx-auto px-4 sm:px-6 py-3 flex items-center justify-between">
+      <!-- Logo + Name -->
+      <a href="#home" class="flex items-center gap-3 group" aria-label="Flower Bar Home">
+        <img src="assets/img/flower.webp" alt="Flower Bar logo" class="w-10 h-10 object-contain rounded-lg ring-1 ring-black/5 group-hover:ring-fb.primary/40 transition" width="40" height="40" loading="lazy"/>
+
+        <div class="leading-tight">
+          <span class="block text-base font-extrabold tracking-tight text-fb.primary">Flower Bar</span>
+          <span class="block text-xs text-black/60">Fresh Flowers • Ghana</span>
+        </div>
+      </a>
+
+      <!-- Desktop links -->
+      <div class="hidden md:flex items-center gap-6">
+        <a class="text-sm font-semibold text-black/70 hover:text-fb.primary transition" href="#home">Home</a>
+        <a class="text-sm font-semibold text-black/70 hover:text-fb.primary transition" href="#catalog">Shop</a>
+        <a class="text-sm font-semibold text-black/70 hover:text-fb.primary transition" href="#contact">Contact</a>
+
+        <!-- Cart button -->
+        <button id="cartBtn"
+          class="relative inline-flex items-center gap-2 px-3 py-2 rounded-xl border border-black/10 hover:border-fb.primary/30 hover:shadow-soft transition"
+          type="button" aria-label="Open cart">
+          <i class="fa-solid fa-bag-shopping text-fb.deep"></i>
+          <span class="text-sm font-semibold">Cart</span>
+          <span id="cartBadge" class="absolute -top-2 -right-2 min-w-[20px] h-5 px-1 rounded-full bg-fb.primary text-green-500 text-xs font-bold flex items-center justify-center">
+            0
+          </span>
+        </button>
+      </div>
+
+      <!-- Mobile controls -->
+      <div class="md:hidden flex items-center gap-2">
+        <button id="cartBtnMobile"
+          class="relative inline-flex items-center justify-center w-10 h-10 rounded-xl border border-black/10 hover:border-fb.primary/30 transition"
+          type="button" aria-label="Open cart">
+          <i class="fa-solid fa-bag-shopping text-fb.deep"></i>
+          <span id="cartBadgeMobile" class="absolute -top-2 -right-2 min-w-[20px] h-5 px-1 rounded-full bg-fb.primary text-white text-xs font-bold flex items-center justify-center">
+            0
+          </span>
+        </button>
+
+        <button id="menuBtn"
+          class="inline-flex items-center justify-center w-10 h-10 rounded-xl border border-black/10 hover:border-fb.primary/30 transition"
+          type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+          <i class="fa-solid fa-bars text-fb.ink"></i>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Mobile menu -->
+    <div id="mobileMenu" class="md:hidden hidden border-t border-black/5 bg-white">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 py-3 flex flex-col gap-2">
+        <a class="py-2 px-3 rounded-lg hover:bg-fb.soft transition font-semibold text-black/70 hover:text-fb.primary" href="#home">Home</a>
+        <a class="py-2 px-3 rounded-lg hover:bg-fb.soft transition font-semibold text-black/70 hover:text-fb.primary" href="#catalog">Shop</a>
+        <a class="py-2 px-3 rounded-lg hover:bg-fb.soft transition font-semibold text-black/70 hover:text-fb.primary" href="#contact">Contact</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- ================= HERO ================= -->
+    <section id="home" class="relative overflow-hidden">
+      <div class="absolute inset-0 bg-gradient-to-b from-fb.soft via-white to-white"></div>
+
+      <div class="relative max-w-6xl mx-auto px-4 sm:px-6 py-14 sm:py-16">
+        <div class="grid lg:grid-cols-2 gap-10 items-center">
+          <div>
+            <p class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-black/10 text-sm text-black/70">
+              <span class="w-2 h-2 rounded-full bg-fb.primary"></span>
+              Fresh • Hand-picked • Delivered with care
+            </p>
+
+            <h1 class="mt-4 text-3xl sm:text-5xl font-extrabold tracking-tight">
+              Freshly cut flowers for every occasion
+            </h1>
+            <p class="mt-4 text-base sm:text-lg text-black/70 leading-relaxed max-w-xl">
+              Flower Bar is a Ghana-based floral brand offering curated bouquets, event florals, and modern gifting.
+              Add to cart and checkout instantly via WhatsApp, or request Mobile Money payment.
+            </p>
+
+            <div class="mt-7 flex flex-col sm:flex-row gap-3">
+              <a href="#catalog"
+                 class="inline-flex items-center justify-center px-6 py-3 rounded-xl bg-fb.primary text-green-500 font-extrabold hover:bg-fb.deep hover:shadow-lift active:scale-[0.98] transition">
+                Order Now
+                <i class="fa-solid fa-arrow-right ml-2"></i>
+              </a>
+              <button data-open="privacyModal"
+                 class="inline-flex items-center justify-center px-6 py-3 rounded-xl border border-black/10 bg-white font-extrabold hover:border-fb.primary/30 hover:bg-fb.soft hover:shadow-soft transition">
+                Privacy Policy
+              </button>
+            </div>
+
+            <div class="mt-7 grid grid-cols-3 gap-3 max-w-md">
+              <div class="p-4 rounded-2xl bg-white border border-black/5 hover:shadow-soft transition">
+                <p class="text-sm font-bold">Freshness</p>
+                <p class="text-xs text-black/60 mt-1">Daily selection</p>
+              </div>
+              <div class="p-4 rounded-2xl bg-white border border-black/5 hover:shadow-soft transition">
+                <p class="text-sm font-bold">Gifting</p>
+                <p class="text-xs text-black/60 mt-1">Elegant wrap</p>
+              </div>
+              <div class="p-4 rounded-2xl bg-white border border-black/5 hover:shadow-soft transition">
+                <p class="text-sm font-bold">Events</p>
+                <p class="text-xs text-black/60 mt-1">Weddings & more</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="relative">
+            <div class="absolute -inset-6 bg-gradient-to-tr from-fb.primary/15 via-fb.accent/20 to-transparent blur-2xl"></div>
+
+            <div class="relative rounded-3xl overflow-hidden border border-black/5 shadow-soft">
+              <img
+                src="assets/img/White Lilies.webp"
+                alt="Bouquet of fresh flowers"
+                class="w-full h-[320px] sm:h-[420px] object-cover hover:scale-[1.02] transition duration-500"
+                width="1600" height="1066" loading="lazy"
+              />
+              <div class="absolute bottom-4 left-4 right-4 bg-white/90 backdrop-blur rounded-2xl p-4 border border-black/10">
+                <p class="text-sm font-extrabold">Same-day prep (subject to availability)</p>
+                <p class="text-xs text-black/60 mt-1">Message us for custom colours, ribbons, and delivery area.</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= CATALOG ================= -->
+    <section id="catalog" class="max-w-6xl mx-auto px-4 sm:px-6 py-14">
+      <div class="flex items-end justify-between gap-6 flex-wrap">
+        <div>
+          <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight">Shop our collection</h2>
+          <p class="mt-2 text-black/70 max-w-2xl">
+            Modern bouquets designed for gifting and events. Prices are sample values—custom quotes available.
+          </p>
+        </div>
+
+        <button id="clearCartBtn"
+          class="inline-flex items-center gap-2 px-4 py-2 rounded-xl border border-black/10 bg-white text-sm font-semibold text-gray-900 hover:text-fb.primary hover:border-fb.primary/30 hover:bg-fb.soft hover:shadow-soft transition"
+          type="button">
+          <i class="fa-solid fa-trash"></i>
+          Clear cart
+        </button>
+      </div>
+
+      <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Product cards -->
+        <article class="group rounded-3xl bg-white border border-black/5 overflow-hidden hover:shadow-lift transition">
+          <div class="overflow-hidden">
+            <img src="assets/img/Statice.webp"
+              alt="Statice bouquet"
+              class="w-full h-56 object-cover group-hover:scale-105 transition duration-500"
+              width="1400" height="933" loading="lazy" />
+          </div>
+          <div class="p-5">
+            <div class="flex items-start justify-between gap-3">
+              <div>
+                <h3 class="font-extrabold text-lg">Statice</h3>
+                <p class="text-sm text-black/60 mt-1">Classic statice with a modern wrap.</p>
+              </div>
+              <p class="font-extrabold text-fb.deep">₵140.00</p>
+            </div>
+            <button class="mt-4 w-full inline-flex items-center justify-center gap-2 px-4 py-3 rounded-2xl bg-fb.primary text-green-500 font-extrabold hover:bg-fb.deep hover:shadow-soft active:scale-[0.99] transition"
+              type="button"
+              data-add-to-cart='{"id":"statice","name":"Statice","price":140}'>
+              <i class="fa-solid fa-plus"></i> Add to Cart
+            </button>
+          </div>
+        </article>
+
+        <article class="group rounded-3xl bg-white border border-black/5 overflow-hidden hover:shadow-lift transition">
+          <div class="overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1457089328109-e5d9bd499191?q=80&w=1400&auto=format&fit=crop"
+              alt="Sunflower bouquet"
+              class="w-full h-56 object-cover group-hover:scale-105 transition duration-500"
+              width="1400" height="933" loading="lazy" />
+          </div>
+          <div class="p-5">
+            <div class="flex items-start justify-between gap-3">
+              <div>
+                <h3 class="font-extrabold text-lg">Sunshine Bundle</h3>
+                <p class="text-sm text-black/60 mt-1">Bright sunflowers for instant warmth.</p>
+              </div>
+              <p class="font-extrabold text-fb.deep">₵168.00</p>
+            </div>
+            <button class="mt-4 w-full inline-flex items-center justify-center gap-2 px-4 py-3 rounded-2xl bg-fb.primary text-green-500 font-extrabold hover:bg-fb.deep hover:shadow-soft active:scale-[0.99] transition"
+              type="button"
+              data-add-to-cart='{"id":"sunshine-bundle","name":"Sunshine Bundle","price":168}'>
+              <i class="fa-solid fa-plus"></i> Add to Cart
+            </button>
+          </div>
+        </article>
+
+        <article class="group rounded-3xl bg-white border border-black/5 overflow-hidden hover:shadow-lift transition">
+          <div class="overflow-hidden">
+            <img src="assets/img/Chrysanthemums.webp"
+              alt="Chrysanthemums bouquet"
+              class="w-full h-56 object-cover group-hover:scale-105 transition duration-500"
+              width="1400" height="933" loading="lazy" />
+          </div>
+          <div class="p-5">
+            <div class="flex items-start justify-between gap-3">
+              <div>
+                <h3 class="font-extrabold text-lg">Chrysanthemums</h3>
+                <p class="text-sm text-black/60 mt-1">Seasonal blooms with balanced tones.</p>
+              </div>
+              <p class="font-extrabold text-fb.deep">₵140.00</p>
+            </div>
+            <button class="mt-4 w-full inline-flex items-center justify-center gap-2 px-4 py-3 rounded-2xl bg-fb.primary text-green-500 font-extrabold hover:bg-fb.deep hover:shadow-soft active:scale-[0.99] transition"
+              type="button"
+              data-add-to-cart='{"id":"chrysanthemums","name":"Chrysanthemums","price":140}'>
+              <i class="fa-solid fa-plus"></i> Add to Cart
+            </button>
+          </div>
+        </article>
+
+        <article class="group rounded-3xl bg-white border border-black/5 overflow-hidden hover:shadow-lift transition">
+          <div class="overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1508610048659-a06b669e3321?q=80&w=1400&auto=format&fit=crop"
+              alt="Orchid arrangement"
+              class="w-full h-56 object-cover group-hover:scale-105 transition duration-500"
+              width="1400" height="933" loading="lazy" />
+          </div>
+          <div class="p-5">
+            <div class="flex items-start justify-between gap-3">
+              <div>
+                <h3 class="font-extrabold text-lg">Orchid Calm</h3>
+                <p class="text-sm text-black/60 mt-1">Minimal, elegant, long-lasting.</p>
+              </div>
+              <p class="font-extrabold text-fb.deep">₵252.00</p>
+            </div>
+            <button class="mt-4 w-full inline-flex items-center justify-center gap-2 px-4 py-3 rounded-2xl bg-fb.primary text-green-500 font-extrabold hover:bg-fb.deep hover:shadow-soft active:scale-[0.99] transition"
+              type="button"
+              data-add-to-cart='{"id":"orchid-calm","name":"Orchid Calm","price":252}'>
+              <i class="fa-solid fa-plus"></i> Add to Cart
+            </button>
+          </div>
+        </article>
+
+        <article class="group rounded-3xl bg-white border border-black/5 overflow-hidden hover:shadow-lift transition">
+          <div class="overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1469259943454-aa100abba749?q=80&w=1400&auto=format&fit=crop"
+              alt="Lilies bouquet"
+              class="w-full h-56 object-cover group-hover:scale-105 transition duration-500"
+              width="1400" height="933" loading="lazy" />
+          </div>
+          <div class="p-5">
+            <div class="flex items-start justify-between gap-3">
+              <div>
+                <h3 class="font-extrabold text-lg">Lily Luxe</h3>
+                <p class="text-sm text-black/60 mt-1">Soft fragrance, premium finish.</p>
+              </div>
+              <p class="font-extrabold text-fb.deep">₵140.00</p>
+            </div>
+            <button class="mt-4 w-full inline-flex items-center justify-center gap-2 px-4 py-3 rounded-2xl bg-fb.primary text-green-500 font-extrabold hover:bg-fb.deep hover:shadow-soft active:scale-[0.99] transition"
+              type="button"
+              data-add-to-cart='{"id":"lily-luxe","name":"Lily Luxe","price":140}'>
+              <i class="fa-solid fa-plus"></i> Add to Cart
+            </button>
+          </div>
+        </article>
+
+        <article class="group rounded-3xl bg-white border border-black/5 overflow-hidden hover:shadow-lift transition">
+          <div class="overflow-hidden">
+            <img src="assets/img/Roses.webp"
+              alt="Premium roses bouquet"
+              class="w-full h-56 object-cover group-hover:scale-105 transition duration-500"
+              width="1400" height="933" loading="lazy" />
+          </div>
+          <div class="p-5">
+            <div class="flex items-start justify-between gap-3">
+              <div>
+                <h3 class="font-extrabold text-lg">Premium Roses</h3>
+                <p class="text-sm text-black/60 mt-1">Designed for delightful fragrance and gifting.</p>
+              </div>
+              <p class="font-extrabold text-fb.deep">₵308.00</p>
+            </div>
+            <button class="mt-4 w-full inline-flex items-center justify-center gap-2 px-4 py-3 rounded-2xl bg-fb.primary text-green-500 font-extrabold hover:bg-fb.deep hover:shadow-soft active:scale-[0.99] transition"
+              type="button"
+              data-add-to-cart='{"id":"premium-roses","name":"Premium Roses","price":308}'>
+              <i class="fa-solid fa-plus"></i> Add to Cart
+            </button>
+          </div>
+        </article>
+      </div>
+
+      <div class="mt-10 rounded-3xl border border-black/5 bg-fb.soft p-6 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+        <div>
+          <p class="font-extrabold text-lg">Need something custom?</p>
+          <p class="text-black/70 mt-1">Tell us your colours, budget, and delivery location. We’ll propose a bouquet.</p>
+        </div>
+        <a id="whatsappCta"
+           href="https://wa.me/233204738137"
+           target="_blank" rel="noopener"
+           class="inline-flex items-center gap-2 px-5 py-3 rounded-2xl bg-fb.primary text-green-500 border border-black/10 font-extrabold hover:bg-fb.deep hover:shadow-soft transition">
+          <i class="fa-brands fa-whatsapp text-white"></i>
+          Chat on WhatsApp
+        </a>
+      </div>
+    </section>
+
+    <!-- ================= CONTACT ================= -->
+    <section id="contact" class="bg-gradient-to-b from-white to-fb.soft">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 py-14">
+        <div class="max-w-2xl">
+          <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight">Contact us</h2>
+          <p class="mt-2 text-black/70">
+            For orders, partnerships, or event requests, send a message. We’ll reply promptly.
+          </p>
+        </div>
+
+        <form id="contactForm" class="mt-8 grid gap-4 max-w-2xl" novalidate>
+          <div class="grid sm:grid-cols-2 gap-4">
+            <div>
+              <label for="name" class="block text-sm font-extrabold">Name <span class="text-fb.deep">*</span></label>
+              <input id="name" name="name" required
+                class="mt-1 w-full px-4 py-3 rounded-2xl border border-black/10 bg-white focus:border-fb.primary/40 transition"
+                type="text" placeholder="Your name" autocomplete="name" />
+              <p class="mt-1 text-xs text-black/50">Required.</p>
+            </div>
+            <div>
+              <label for="email" class="block text-sm font-extrabold">Email <span class="text-fb.deep">*</span></label>
+              <input id="email" name="email" required
+                class="mt-1 w-full px-4 py-3 rounded-2xl border border-black/10 bg-white focus:border-fb.primary/40 transition"
+                type="email" placeholder="you@example.com" autocomplete="email" />
+              <p class="mt-1 text-xs text-black/50">We’ll only use this to respond.</p>
+            </div>
+          </div>
+
+          <div>
+            <label for="message" class="block text-sm font-extrabold">Message <span class="text-fb.deep">*</span></label>
+            <textarea id="message" name="message" required rows="5"
+              class="mt-1 w-full px-4 py-3 rounded-2xl border border-black/10 bg-white focus:border-fb.primary/40 transition"
+              placeholder="Tell us what you need (occasion, colours, budget, delivery area)"></textarea>
+            <p class="mt-1 text-xs text-black/50">Required. Include your delivery location for faster support.</p>
+          </div>
+
+          <button
+            class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-2xl bg-fb.primary text-gray-900 font-extrabold hover:bg-fb.deep hover:shadow-lift active:scale-[0.98] transition"
+            type="submit">
+            Send Message
+            <i class="fa-solid fa-paper-plane"></i>
+          </button>
+
+          <p class="text-xs text-black/60">
+            By submitting, you agree that Flower Bar may contact you regarding your enquiry. See our
+            <button type="button" class="underline hover:text-fb.primary transition" data-open="privacyModal">Privacy Policy</button>.
+          </p>
+        </form>
+      </div>
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="border-t border-black/5 bg-white">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 py-10">
+        <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
+          <div>
+            <p class="font-extrabold">Flower Bar</p>
+            <p class="text-sm text-black/60 mt-1">Fresh Flowers • Ghana</p>
+            <p class="text-xs text-black/50 mt-2">© <span id="year"></span> Flower Bar. All rights reserved.</p>
+          </div>
+
+          <div class="flex flex-col sm:items-end gap-3">
+            <div class="flex items-center gap-3">
+              <a href="https://www.instagram.com/flowerbargh/" target="_blank" rel="noopener"
+                 class="w-10 h-10 rounded-xl border border-black/10 inline-flex items-center justify-center hover:border-fb.primary/30 hover:shadow-soft transition"
+                 aria-label="Instagram">
+                <i class="fa-brands fa-instagram text-fb.deep"></i>
+              </a>
+            </div>
+
+            <div class="flex flex-wrap gap-x-4 gap-y-2 text-sm">
+              <button type="button" class="text-black/70 hover:text-fb.primary transition underline-offset-4 hover:underline" data-open="privacyModal">
+                Privacy Policy
+              </button>
+              <button type="button" class="text-black/70 hover:text-fb.primary transition underline-offset-4 hover:underline" data-open="cookieModal">
+                Cookie Settings
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <!-- ================= FLOATING WHATSAPP ================= -->
+  <a
+    href="https://wa.me/233204738137"
+    target="_blank" rel="noopener"
+    class="fixed bottom-5 right-5 z-50 w-14 h-14 rounded-2xl bg-fb.primary text-green-500 flex items-center justify-center shadow-lift hover:bg-fb.deep hover:shadow-[0_22px_55px_rgba(0,150,97,0.35)] transition animate-floaty"
+    aria-label="Chat on WhatsApp"
+    title="Chat on WhatsApp"
+  >
+    <i class="fa-brands fa-whatsapp text-2xl"></i>
+  </a>
+
+  <!-- ================= CART MODAL ================= -->
+  <div id="cartModal" class="fixed inset-0 z-[60] hidden" role="dialog" aria-modal="true" aria-labelledby="cartTitle">
+    <div class="absolute inset-0 bg-black/40"></div>
+    <div class="absolute inset-0 flex items-end sm:items-center justify-center p-4">
+      <div class="w-full max-w-lg rounded-3xl bg-white shadow-lift border border-black/10 overflow-hidden">
+        <div class="p-5 flex items-start justify-between gap-4 border-b border-black/5">
+          <div>
+            <h3 id="cartTitle" class="text-lg font-extrabold">Your cart</h3>
+            <p class="text-sm text-black/60">Stored locally on your device for this demo.</p>
+          </div>
+          <button type="button" class="w-10 h-10 rounded-xl border border-black/10 hover:border-fb.primary/30 hover:shadow-soft transition" data-close="cartModal" aria-label="Close cart">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+
+        <div class="p-5">
+          <div id="cartItems" class="grid gap-3"></div>
+
+          <div class="mt-4 flex items-center justify-between">
+            <p class="text-sm font-extrabold">Estimated total</p>
+            <p id="cartTotal" class="text-lg font-extrabold text-fb.deep">₵0.00</p>
+          </div>
+
+          <div class="mt-5 flex flex-col sm:flex-row gap-3">
+            <button id="checkoutBtn" type="button"
+              class="flex-1 inline-flex items-center justify-center gap-2 px-5 py-3 rounded-2xl bg-fb.primary text-white font-extrabold hover:bg-fb.deep hover:shadow-soft active:scale-[0.99] transition">
+              Proceed
+              <i class="fa-solid fa-arrow-right"></i>
+            </button>
+            <button type="button" data-close="cartModal"
+              class="flex-1 inline-flex items-center justify-center gap-2 px-5 py-3 rounded-2xl border border-black/10 bg-white font-extrabold hover:border-fb.primary/30 hover:bg-fb.soft hover:shadow-soft transition">
+              Continue shopping
+            </button>
+          </div>
+
+          <div class="mt-4 space-y-2">
+            <p class="text-sm font-extrabold">Choose payment method</p>
+
+            <label class="flex items-center gap-3 p-3 rounded-xl border border-black/10 cursor-pointer hover:border-fb.primary transition">
+              <input type="radio" name="paymentMethod" value="momo" checked>
+              <span class="font-semibold">Mobile Money (MTN / Vodafone / AirtelTigo)</span>
+            </label>
+
+            <label class="flex items-center gap-3 p-3 rounded-xl border border-black/10 cursor-pointer hover:border-fb.primary transition">
+              <input type="radio" name="paymentMethod" value="whatsapp">
+              <span class="font-semibold">WhatsApp Order (Pay on Delivery)</span>
+            </label>
+          </div>
+
+          <div id="momoFields" class="mt-4 space-y-3">
+            <input
+              id="momoNumber"
+              type="tel"
+              inputmode="tel"
+              placeholder="Mobile Money Number (e.g. 024XXXXXXX)"
+              class="w-full px-4 py-3 rounded-2xl border border-black/10 focus:border-fb.primary transition"
+              autocomplete="tel"
+            />
+
+            <select id="momoProvider" class="w-full px-4 py-3 rounded-2xl border border-black/10 focus:border-fb.primary transition">
+              <option>MTN MoMo</option>
+              <option>Vodafone Cash</option>
+              <option>AirtelTigo Money</option>
+            </select>
+          </div>
+
+          <p class="mt-3 text-xs text-black/60">
+            Proceed will open WhatsApp with your order summary. If Mobile Money is selected, we’ll include your MoMo details for payment processing.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= PRIVACY MODAL ================= -->
+  <div id="privacyModal" class="fixed inset-0 z-[70] hidden" role="dialog" aria-modal="true" aria-labelledby="privacyTitle">
+    <div class="absolute inset-0 bg-black/40"></div>
+    <div class="absolute inset-0 flex items-center justify-center p-4">
+      <div class="w-full max-w-2xl rounded-3xl bg-white shadow-lift border border-black/10 overflow-hidden">
+        <div class="p-5 flex items-start justify-between gap-4 border-b border-black/5">
+          <h3 id="privacyTitle" class="text-lg font-extrabold">Privacy Policy (Sample)</h3>
+          <button type="button" class="w-10 h-10 rounded-xl border border-black/10 hover:border-fb.primary/30 hover:shadow-soft transition" data-close="privacyModal" aria-label="Close privacy policy">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+        <div class="p-5 space-y-4 text-sm text-black/70 leading-relaxed">
+          <p>
+            This sample policy is a starting point for Ghana's Data Protection-style compliance.
+          </p>
+
+          <div>
+            <p class="font-extrabold text-fb.ink">What we collect</p>
+            <ul class="list-disc pl-5 mt-2 space-y-1">
+              <li>Contact details you submit (name, email, message).</li>
+              <li>Cookie preferences stored on your device (localStorage).</li>
+              <li>Optional analytics preference when you consent.</li>
+            </ul>
+          </div>
+
+          <div>
+            <p class="font-extrabold text-fb.ink">How we use it</p>
+            <ul class="list-disc pl-5 mt-2 space-y-1">
+              <li>To respond to enquiries and provide requested services.</li>
+              <li>To remember cookie choices and improve site experience.</li>
+              <li>To measure performance only when you consent to analytics.</li>
+            </ul>
+          </div>
+
+          <div>
+            <p class="font-extrabold text-fb.ink">Your rights</p>
+            <p class="mt-2">
+              You may request access, correction, deletion, or restriction of your data. You can withdraw non-essential
+              cookie consent at any time via “Cookie Settings”.
+            </p>
+          </div>
+
+          <div>
+            <p class="font-extrabold text-fb.ink">Contact</p>
+            <p class="mt-2">
+              Email: <span class="font-semibold">privacy@flowerbar.com</span>.<br/>
+              Location: Adjacent Melcom Nanakrom, Accra-Ghana.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= COOKIE SETTINGS MODAL ================= -->
+  <div id="cookieModal" class="fixed inset-0 z-[80] hidden" role="dialog" aria-modal="true" aria-labelledby="cookieTitle">
+    <div class="absolute inset-0 bg-black/40"></div>
+    <div class="absolute inset-0 flex items-center justify-center p-4">
+      <div class="w-full max-w-lg rounded-3xl bg-white shadow-lift border border-black/10 overflow-hidden">
+        <div class="p-5 flex items-start justify-between gap-4 border-b border-black/5">
+          <div>
+            <h3 id="cookieTitle" class="text-lg font-extrabold">Cookie settings</h3>
+            <p class="text-sm text-black/60 mt-1">Choose what you allow. You can update this anytime.</p>
+          </div>
+          <button type="button" class="w-10 h-10 rounded-xl border border-black/10 hover:border-fb.primary/30 hover:shadow-soft transition" data-close="cookieModal" aria-label="Close cookie settings">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+
+        <div class="p-5 space-y-4 text-sm text-black/70">
+          <div class="p-4 rounded-2xl border border-black/5">
+            <div class="flex items-start justify-between gap-4">
+              <div>
+                <p class="font-extrabold text-fb.ink">Essential</p>
+                <p class="text-black/60 mt-1">Required for basic site functions (cannot be turned off).</p>
+              </div>
+              <span class="px-3 py-1 rounded-full bg-fb.soft text-xs font-extrabold">Always on</span>
+            </div>
+          </div>
+
+          <div class="p-4 rounded-2xl border border-black/5">
+            <div class="flex items-start justify-between gap-4">
+              <div>
+                <p class="font-extrabold text-fb.ink">Analytics</p>
+                <p class="text-black/60 mt-1">Helps us understand usage to improve the site.</p>
+              </div>
+              <label class="inline-flex items-center cursor-pointer select-none">
+                <input id="analyticsToggle" type="checkbox" class="sr-only">
+                <span id="analyticsTrack" class="w-12 h-7 rounded-full bg-black/10 relative transition">
+                  <span id="analyticsKnob" class="absolute left-1 top-1 w-5 h-5 rounded-full bg-white shadow-soft transition"></span>
+                </span>
+              </label>
+            </div>
+          </div>
+
+          <div class="flex flex-col sm:flex-row gap-3 pt-2">
+            <button id="saveCookiePrefs" type="button"
+              class="flex-1 inline-flex items-center justify-center gap-2 px-5 py-3 rounded-2xl bg-fb.primary text-gray-900 font-extrabold hover:bg-fb.deep hover:shadow-soft transition">
+              Save preferences
+            </button>
+            <button type="button" data-close="cookieModal"
+              class="flex-1 inline-flex items-center justify-center gap-2 px-5 py-3 rounded-2xl border border-black/10 bg-white font-extrabold hover:border-fb.primary/30 hover:bg-fb.soft hover:shadow-soft transition">
+              Cancel
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= COOKIE BANNER ================= -->
+  <div id="cookieBanner" class="fixed bottom-0 inset-x-0 z-[90] hidden">
+    <div class="max-w-6xl mx-auto p-4">
+      <div class="rounded-3xl bg-white border border-black/10 shadow-lift p-4 sm:p-5 flex flex-col md:flex-row md:items-center justify-between gap-4">
+        <div class="text-sm text-black/70 leading-relaxed">
+          <p class="font-extrabold text-fb.ink">We use cookies</p>
+          <p class="mt-1">
+            We use essential cookies to make this site work. With your permission, we may also use analytics to improve performance.
+            You can accept, reject non-essential cookies, or manage your settings.
+          </p>
+        </div>
+        <div class="flex flex-col sm:flex-row gap-2 min-w-[260px]">
+          <button id="cookieAccept" type="button"
+            class="px-4 py-3 rounded-2xl bg-fb.primary text-white font-extrabold hover:bg-fb.deep hover:shadow-soft transition">
+            Accept
+          </button>
+          <button id="cookieReject" type="button"
+            class="px-4 py-3 rounded-2xl border border-black/10 bg-white font-extrabold hover:border-fb.primary/30 hover:bg-fb.soft hover:shadow-soft transition">
+            Reject
+          </button>
+          <button id="cookieSettings" type="button"
+            class="px-4 py-3 rounded-2xl bg-fb.soft font-extrabold hover:shadow-soft transition">
+            Settings
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= MINIMAL JS ================= -->
+  <script src="assets/js/flowerbar.js"></script>
+</body>
+</html>

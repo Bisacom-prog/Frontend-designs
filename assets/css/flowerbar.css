@@ -1,0 +1,4 @@
+
+    img { content-visibility: auto; }
+    :focus-visible { outline: 3px solid #BFF27B; outline-offset: 3px; }
+  
